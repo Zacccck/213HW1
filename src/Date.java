@@ -27,9 +27,6 @@ public class Date {
     public static final int QUADRENNIAL = 4;
     public static final int CENTENNIAL = 100;
     public static final int QUATERCENTENNIAL = 400;
-    
- 
-    
 
     //taking mm/dd/yyyy and create a Date object
     public Date(String d){
@@ -108,7 +105,11 @@ public class Date {
 		}
 		return false;
 	}
-
+	
+	@Override
+	public String toString() {
+		return month + "/" + day + "/" + year;
+	}
 
 
 
