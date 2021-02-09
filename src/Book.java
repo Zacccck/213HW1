@@ -91,6 +91,15 @@ public class Book {
 	public Date getDatePublished() {
 		return this.datePublished;
 	}
+	
+	/**
+	 * To get the checkout status of the book.
+	 * 
+	 * @return boolean representing the checkout status
+	 */
+	public boolean getCheckedOut() {
+		return checkedOut;
+	}
 
 	/**
 	 * Compare two books by their serial number and see if they are equal.
@@ -113,7 +122,7 @@ public class Book {
 	 */
 	@Override
 	public String toString() {
-		return "Book#" + this.number + "::" + this.name + "::" + this.datePublished + "is available.";
+		return "Book#" + this.number + "::" + this.name + "::" + this.datePublished.toString() + " is available.";
 		// Book#10007::Design Patterns::5/30/1996::is available.
 	}
 
