@@ -89,8 +89,11 @@ public class Kiosk{
 						}
 						if(lib.isEmpty())
 							System.out.println("Library catalog is empty!.");
-						else
+						else {
+							System.out.println("**List of books in the library.");
 							lib.print();
+							System.out.println("**End of list.");
+						}
 						break;
 				case "PD":
 						if(tokens.length != P_ARGS) {
@@ -99,8 +102,11 @@ public class Kiosk{
 						}
 						if(lib.isEmpty())
 							System.out.println("Library catalog is empty!.");
-						else
+						else {
+							System.out.println("**List of books by the dates published.");
 							lib.printByDate();
+							System.out.println("**End of list.");
+						}
 						break;
 				case "PN":
 						if(tokens.length != P_ARGS) {
@@ -109,8 +115,11 @@ public class Kiosk{
 						}
 						if(lib.isEmpty())
 							System.out.println("Library catalog is empty!.");
-						else
+						else {
+							System.out.println("**List of books by the book numbers.");
 							lib.printByNumber();
+							System.out.println("**End of list.");
+						}
 						break;
 				case "Q":
 						System.out.println("Kiosk session ended.");
