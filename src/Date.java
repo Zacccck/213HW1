@@ -34,14 +34,21 @@ public class Date {
     public static final int QUATERCENTENNIAL = 400;
 
     //taking mm/dd/yyyy and create a Date object
-    public Date(String d){
-        String dates[] = d.split("/");
-		month = Integer.parseInt(dates[0]);
-		day = Integer.parseInt(dates[1]);
-		year = Integer.parseInt(dates[2]);
+    /**
+     * Basic constructor for Date that takes a string and splits it.
+     * @param date is the string to be split
+     */
+    public Date(String date){
+        String dates[] = date.split("/");
+		month = Integer.parseInt(dates[0].trim());
+		day = Integer.parseInt(dates[1].trim());
+		year = Integer.parseInt(dates[2].trim());
 	}
 
     //creating an object with today's date (see Calendar class)
+    /**
+     * Default constructor that sets Date attributes to current date.
+     */
     public Date(){
         Calendar cal = Calendar.getInstance();
 
@@ -50,18 +57,35 @@ public class Date {
         day = cal.get(Calendar.DATE);
     }
     
+    /**
+     * To get the year of Date.
+     * @return int of the the year
+     */
     public int getYear(){
 		return this.year;
 	}
 	
+    /**
+     * To get the month of Date.
+     * @return int of the month
+     */
 	public int getMonth(){
 		return this.month;
 	}
 	
+	/**
+	 * To get the day of Date.
+	 * @return int of the day
+	 */
 	public int getDay(){
 		return this.day;
 	}
 
+	/**
+	 * Checks the validity of a date.
+	 * Checks for future dates, dates before 1900, correct days in month, and leap years.
+	 * @return true if the date is valid, false if it is not
+	 */
     public boolean isValid(){
         Calendar currentDate = Calendar.getInstance();
         Calendar thisDate = Calendar.getInstance();
@@ -98,10 +122,15 @@ public class Date {
     }
 
     // User created method, checks if there is a leap year
-	private static boolean leapYear(int yr) {
-		if (yr % QUADRENNIAL == 0) {
-			if (yr % CENTENNIAL == 0) {
-				if (yr % QUATERCENTENNIAL == 0) {
+    /**
+     * Checks if the year is a leap year.
+     * @param year to be checked
+     * @return true if it is a leap year, false if it is not
+     */
+	private static boolean leapYear(int year) {
+		if (year % QUADRENNIAL == 0) {
+			if (year % CENTENNIAL == 0) {
+				if (year % QUATERCENTENNIAL == 0) {
 					return true;
 				}
 				return false;
@@ -111,13 +140,20 @@ public class Date {
 		return false;
 	}
 	
+	/**
+	 * Represent date as a string.
+	 * @return String of date representation
+	 */
 	@Override
 	public String toString() {
-		return "" + Integer.toString(month) + "/" + Integer.toString(day) + "/" + Integer.toString(year);
+		return month + "/" + day + "/" + year;
 	}
 
-
-
+	/**
+	 * Testbed for isValid method.
+	 * Checks all cases for possible errors.
+	 * @return void
+	 */
 	public static void main(String[] args) {
 		Date currentDate = new Date(); //test case for default constructor
 		Date validDate = new Date("03/01/2003"); //valid test case using constructor  
@@ -132,27 +168,27 @@ public class Date {
 		Date invalid_31_DayMonth = new Date("03/32/2020");
 		
 		if(currentDate.isValid())
-			System.out.println("currentDate is valid!");
+			System.out.println("currentDate is valid! " + currentDate.toString());
 		if(validDate.isValid())
-			System.out.println("validDate is valid!");
+			System.out.println("validDate is valid! " + validDate.toString());
 		if(!before1900.isValid())
-			System.out.println("before1900 is invalid!");
+			System.out.println("before1900 is invalid! " + before1900.toString());
 		if(!afterCurrentYear.isValid())
-			System.out.println("afterCurrentYear is invalid!");
+			System.out.println("afterCurrentYear is invalid! " + afterCurrentYear.toString());
 		if(!afterCurrentMonth.isValid())
-			System.out.println("afterCurrentMonth is invalid!");
+			System.out.println("afterCurrentMonth is invalid! " + afterCurrentMonth.toString());
 		if(validLeapyear.isValid())
-			System.out.println("validLeapyear is valid!");
+			System.out.println("validLeapyear is valid! " + validLeapyear.toString());
 		if(!invalidLeapYear.isValid())
-			System.out.println("invalidLeapyear is invalid!");
+			System.out.println("invalidLeapYear is invalid! " + invalidLeapYear.toString());
 		if(!invalidMonth.isValid())
-			System.out.println("invalidMonth is invalid!");
+			System.out.println("invalidMonth is invalid! " + invalidMonth.toString());
 		if(!invalidMonthDay.isValid())
-			System.out.println("invalidMonthDay is invalid!");
+			System.out.println("invalidMonthDay is invalid! " + invalidMonthDay.toString());
 		if(!invalid_30_DayMonth.isValid())
-			System.out.println("invalid_30_DayMonth is invalid!");
+			System.out.println("invalid_30_DayMonth is invalid! " + invalid_30_DayMonth.toString());
 		if(!invalid_31_DayMonth.isValid())
-			System.out.println("invalid_31_DayMonth is invalid!");
+			System.out.println("invalid_31_DayMonth is invalid! " + invalid_31_DayMonth.toString());
 		
 	}
 }
