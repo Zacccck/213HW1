@@ -13,8 +13,8 @@ public class Book {
 	public static int COUNT = 10001;
 
 	/**
-	 * A temporary book constructor for other classes when try to find a book by serial number.
-	 * With one properties initialized.
+	 * Temporary book constructor that instantiates a book with only a serial number.
+	 * Useful in book searches when given only serial numbers.
 	 * 
 	 * @param number as the serial number of the book
 	 */
@@ -23,8 +23,7 @@ public class Book {
 	}
 	
 	/**
-	 * This is the constructor.
-	 * With two properties initialized.
+	 * Constructor that instantiates a book when given name and datePublished.
 	 * @param name of the book
 	 * @param datePublished is the publish date of the book
 	 */
@@ -36,8 +35,7 @@ public class Book {
 	}
 	
 	/**
-	 * This is the constructor.
-	 * With three properties initialized.
+	 * Constructor that instantiates a book when given name, datePublished, and checkedOut status.
 	 * @param name of the book
 	 * @param datePublished is the publish date of the book
 	 * @param checkedOut is true if the book has been checked out and not returned, false otherwise
@@ -51,8 +49,8 @@ public class Book {
 	}
 	
 	/**
-	 * This is the constructor.
-	 * With four properties initialized.
+	 * Constructor that instantiates a book when given name, datePublished, and checkedOut status.
+	 * Useful in changing checkout status of a book.
 	 * @param number as the serial number of the book
 	 * @param name of the book
 	 * @param datePublished is the publish date of the book
