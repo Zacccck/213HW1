@@ -113,7 +113,7 @@ public class Date {
 	
 	@Override
 	public String toString() {
-		return month + "/" + day + "/" + year;
+		return "" + Integer.toString(month) + "/" + Integer.toString(day) + "/" + Integer.toString(year);
 	}
 
 
