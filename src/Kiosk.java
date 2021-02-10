@@ -1,5 +1,8 @@
+/**
+ * Command center for handling commands given at the command line.
+ * @author Alexander Galvan, Yuan Zhao
+ */
 package src;
-
 import java.util.Scanner;
 
 public class Kiosk{
@@ -9,6 +12,11 @@ public class Kiosk{
 	public static final int ROI_ARGS = 2;
 	public static final int P_ARGS = 1;
 	
+	/**
+	 * Takes commands from the user, checks if they are valid, and processes them.
+	 * Terminates once Q is input.
+	 * @return void
+	 */
 	public void run() {
 		System.out.println("Library Kiosk running.");
 		
