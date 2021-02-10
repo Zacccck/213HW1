@@ -1,3 +1,8 @@
+/**
+ * Properties of a Date.
+ * Includes constructors, getter methods, and isValid to check for valid dates.
+ * @author Alexander Galvan, Yuan Zhao
+ */
 package src;
 import java.util.*;
 
