@@ -95,7 +95,7 @@ public class Library {
 	 */
 	public boolean checkOut(Book book) { // true if checking out is successful
 		int ptr = find(book);
-		if ((ptr == -1) || books[ptr].getCheckedOut()) {
+		if (ptr == -1) {
 			return false;
 		} else {
 			Book newBook = new Book(this.books[ptr].getNumber(), this.books[ptr].getName(), this.books[ptr].getDatePublished(), true);
@@ -112,7 +112,7 @@ public class Library {
 	 */
 	public boolean returns(Book book) {
 		int ptr = find(book);
-		if ((ptr == -1) || books[ptr].getCheckedOut()) {
+		if (ptr == -1) {
 			return false;
 		} else {
 			Book newBook = new Book(this.books[ptr].getNumber(), this.books[ptr].getName(), this.books[ptr].getDatePublished(), false);
